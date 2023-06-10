@@ -1,8 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import {useRouter} from "next/router";
-import Component from './login-btn';
-import LoginBtn from "./login-btn";
+import LoginBtn from './login-btn';
 
 type LayoutProps = {
     children: React.ReactNode;
@@ -10,8 +9,7 @@ type LayoutProps = {
 
 const Layout = ({children}: LayoutProps) => {
     const router = useRouter();
-    return (
-        <div className="flex flex-col min-h-screen">
+    return (<div className="flex flex-col min-h-screen">
             <Head>
                 <title>My E-commerce Website</title>
                 <link rel="icon" href="/favicon.ico"/>
@@ -100,12 +98,17 @@ const Layout = ({children}: LayoutProps) => {
                 right: -0.25em;
                 bottom: -0.25em;
                 border-radius: 9999px;
-                background-color: #2d3748;
+                background-color: #4a5568;
                 z-index: -1;
+              }
+
+              .nav-link::before .active {
+                background-color: #3182ce;
               }
 
               .active {
                 background-color: #3182ce;
+                border-color: #3182ce;
                 font-weight: bold;
               }
 
@@ -113,8 +116,7 @@ const Layout = ({children}: LayoutProps) => {
                 background-color: #38a169;
               }
             `}</style>
-        </div>
-    );
+        </div>);
 };
 
 export default Layout;
